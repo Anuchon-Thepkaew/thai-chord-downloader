@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ดาวน์โหลดคอร์ดเพลงไทย</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎸 คอร์ดเพลงไทย</h1>
+      <p>ดาวน์โหลดคอร์ดเพลงโปรดของคุณ</p>
+    </header>
+
+    <nav class="search-section">
+      <input 
+        type="text" 
+        id="searchInput" 
+        placeholder="ค้นหาเพลง หรือ ศิลปิน..." 
+        class="search-input"
+      >
+      
+      <select id="difficultyFilter" class="filter-select">
+        <option value="">ทุกระดับ</option>
+        <option value="easy">ง่าย</option>
+        <option value="medium">ปานกลาง</option>
+        <option value="hard">ยาก</option>
+      </select>
+
+      <select id="keyFilter" class="filter-select">
+        <option value="">ทุกคีย์</option>
+      </select>
+
+      <button id="resetBtn" class="reset-btn">รีเซ็ต</button>
+    </nav>
+
+    <div id="songsList" class="songs-grid">
+      <div class="loading">กำลังโหลดเพลง...</div>
+    </div>
+
+    <div id="songDetail" class="song-detail hidden">
+      <div class="detail-content">
+        <button class="close-btn">&times;</button>
+        <img id="detailImage" src="" alt="เพลง" class="detail-image">
+        
+        <div class="detail-info">
+          <h2 id="detailTitle"></h2>
+          <p id="detailArtist" class="artist"></p>
+          <div class="meta">
+            <span class="badge" id="detailKey"></span>
+            <span class="badge" id="detailDifficulty"></span>
+          </div>
+
+          <div class="chords-section">
+            <h3>คอร์ด</h3>
+            <pre id="detailChords"></pre>
+          </div>
+
+          <div class="download-buttons">
+            <button id="downloadPdfBtn" class="btn btn-primary">📥 ดาวน์โหลด PDF</button>
+            <button id="downloadTxtBtn" class="btn btn-secondary">📄 ดาวน์โหลด TXT</button>
+            <button id="copyBtn" class="btn btn-tertiary">📋 คัดลอก</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
